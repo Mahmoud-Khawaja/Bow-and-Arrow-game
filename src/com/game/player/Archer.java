@@ -19,7 +19,6 @@ public class Archer {
     }
 
     public void display(PApplet parent) {
-        // Draw player
         parent.fill(0);
         parent.rectMode(parent.CENTER);
         parent.rect(x, y, 20, 40);
@@ -34,7 +33,6 @@ public class Archer {
     }
 
     public void mouseDragged(PApplet parent) {
-        // Update player position when mouse is dragged
         update(parent.mouseY);
     }
 }

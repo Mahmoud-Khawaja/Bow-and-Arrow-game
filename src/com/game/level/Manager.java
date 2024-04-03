@@ -77,7 +77,7 @@ public class Manager {
         }
     }
 
-
+    // debug
     private void displayScore() {
         parent.fill(0);
         parent.textSize(20);

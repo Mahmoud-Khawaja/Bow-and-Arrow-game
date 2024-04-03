@@ -9,7 +9,7 @@
 
     public abstract class Level {
         protected PApplet parent;
-        protected int numArrows; // Number of arrows for this level
+        protected int numArrows;
         protected ArrayList<Balloon> balloons; // List of balloons for this level
         protected ArrayList<Arrow> arrows;
         protected Archer archer;

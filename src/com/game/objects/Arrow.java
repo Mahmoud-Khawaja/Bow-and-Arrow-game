@@ -8,7 +8,6 @@ import java.util.ArrayList;
 public class Arrow {
     float x, y;
     float speed = 3; // Adjust arrow speed as needed
-    boolean fired = false; // Track whether the arrow has been fired
     PApplet parent;
 
     public Arrow(float x, float y, PApplet parent) {
@@ -25,7 +24,6 @@ public class Arrow {
         for (int i = balloons.size() - 1; i >= 0; i--) {
             Balloon balloon = balloons.get(i);
             if (hits(balloon)) {
-                // Do something when the arrow hits a balloon
                 balloons.remove(i); // Remove the balloon from the list
             }
         }
