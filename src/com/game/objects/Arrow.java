@@ -31,8 +31,8 @@ public class Arrow {
 
     public void display() {
         // Draw arrow
-        parent.stroke(0);
-        parent.line(x, y, x + 20, y); // Adjust arrow length as needed
+        parent.stroke(2);
+        parent.line(x, y, x + 30, y); // Adjust arrow length as needed
     }
 
     public boolean isOffscreen() {

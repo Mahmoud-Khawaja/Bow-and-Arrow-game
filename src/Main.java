@@ -1,7 +1,7 @@
 import com.game.level.Manager;
 import processing.core.PApplet;
 
-public class BowAndArrow extends PApplet {
+public class Main extends PApplet {
     Manager manager;
 
     public void settings() {
@@ -28,6 +28,6 @@ public class BowAndArrow extends PApplet {
 
     public static void main(String[] args) {
         String[] processingArgs = { "Bow and Arrow" };
-        PApplet.runSketch(processingArgs, new BowAndArrow());
+        PApplet.runSketch(processingArgs, new Main());
     }
 }

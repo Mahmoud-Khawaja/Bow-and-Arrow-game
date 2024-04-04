@@ -12,13 +12,13 @@ public class LevelOne extends Level {
     public LevelOne(PApplet parent, int numArrows, Archer archer) {
         super(parent, numArrows, archer);
         createBalloons();
-        createArrows(); // Add this line to create arrows when the level is initialized
+        createArrows();
     }
 
     private void createBalloons() {
         float spacing = 2; // Spacing between balloons
 
-        // Create red balloons for Level One
+        // Create red balloons
         for (int i = 0; i < 15; i++) {
             balloons.add(new RedBalloon(parent.width - 20 - i * (20 + spacing), parent.height / 2f, 2, parent.color(255, 0, 0), parent));
         }
@@ -32,11 +32,9 @@ public class LevelOne extends Level {
 
     @Override
     public void update() {
-        // Update balloon positions
         for (Balloon balloon : balloons) {
             balloon.update();
         }
-        // Update arrow positions
         for (Arrow arrow : arrows) {
             arrow.update(balloons);
         }
@@ -44,7 +42,6 @@ public class LevelOne extends Level {
 
     @Override
     public void display() {
-        // Display balloons and arrows
         for (Balloon balloon : balloons) {
             balloon.display();
         }
