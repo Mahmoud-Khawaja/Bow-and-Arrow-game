@@ -25,7 +25,7 @@ public class LevelTwo extends Level {
     private void createRedBalloons() {
         int numRedBalloons = 15;
         for (int i = 0; i < numRedBalloons; i++) {
-            float balloonY = parent.random(20, parent.height - 20); // Random Y-coordinate within the screen boundaries
+            float balloonY = parent.random(20, parent.height - 20);
             balloons.add(new RedBalloon(parent.width - 20 - i * (balloonSpacing + 2), balloonY, 2, parent.color(255, 0, 0), parent));
         }
     }
@@ -33,7 +33,7 @@ public class LevelTwo extends Level {
     private void createYellowBalloons() {
         int numYellowBalloons = 3;
         for (int i = 0; i < numYellowBalloons; i++) {
-            float balloonY = parent.random(20, parent.height - 20); // Random Y-coordinate within the screen boundaries
+            float balloonY = parent.random(20, parent.height - 20);
             float speed = parent.random(1, 3);
             float acceleration = parent.random(0.01f, 0.03f);
             balloons.add(new YellowBalloon(parent.width - 20 - i * (balloonSpacing + 2), balloonY, speed, acceleration, parent.color(255, 255, 0), parent));
@@ -52,7 +52,7 @@ public class LevelTwo extends Level {
             balloon.update();
         }
         for (Arrow arrow : arrows) {
-            arrow.update(balloons); // Pass the list of balloons to the arrow's update method
+            arrow.update(balloons);
         }
     }
 

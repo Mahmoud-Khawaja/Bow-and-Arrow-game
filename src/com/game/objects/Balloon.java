@@ -26,8 +26,7 @@ public abstract class Balloon {
     }
 
     public boolean checkCollision(Arrow arrow) {
-        // Check if the arrow hits this balloon
         float distance = PApplet.dist(arrow.getX(), arrow.getY(), x, y);
-        return distance < 15; // Adjust this value as needed for better hit detection
+        return distance < 15; // Adjust this value for hit detection
     }
 }

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class Arrow {
     float x, y;
-    float speed = 3; // Adjust arrow speed as needed
+    float speed = 3;
     PApplet parent;
 
     public Arrow(float x, float y, PApplet parent) {
@@ -24,19 +24,17 @@ public class Arrow {
         for (int i = balloons.size() - 1; i >= 0; i--) {
             Balloon balloon = balloons.get(i);
             if (hits(balloon)) {
-                balloons.remove(i); // Remove the balloon from the list
+                balloons.remove(i);
             }
         }
     }
 
     public void display() {
-        // Draw arrow
         parent.stroke(2);
-        parent.line(x, y, x + 30, y); // Adjust arrow length as needed
+        parent.line(x, y, x + 30, y);
     }
 
     public boolean isOffscreen() {
-        // Check if arrow is offscreen
         return x > parent.width;
     }
 

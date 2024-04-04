@@ -104,7 +104,6 @@ public class Manager {
         int remainingArrows = arrowsNumber - arrowsFired;
         int shotBalloons = balloonsInLevel.get(currentLevel) - currentLevel.getBalloons().size();
 
-        // Calculating current score
         int currentScore = (remainingArrows + 1) * shotBalloons;
 
         parent.text("Score: " + score + "| Current Score: " + currentScore + " | Remaining Arrows: " + remainingArrows, 10, 10);

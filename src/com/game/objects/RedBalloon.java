@@ -10,11 +10,10 @@ public class RedBalloon extends Balloon {
 
     @Override
     public void update() {
-        // Update red balloon position
         y -= speed;
         // Wrap around if balloon goes off-screen
-        if (y < 0) {
-            y = parent.height;
+        if (y <= -20) { // 20 is the height of the balloon this is better than y<=0 for smoothness
+            y = parent.height + 20;
         }
     }
 }

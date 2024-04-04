@@ -25,18 +25,14 @@
         public void update() {
             // Update arrow positions
             for (Arrow arrow : arrows) {
-                arrow.update(balloons); // Pass the list of balloons to the arrow's update method
+                arrow.update(balloons);
             }
 
         }
 
         public abstract void display();
-
-        // Abstract method to get balloons
         public abstract ArrayList<Balloon> getBalloons();
-
         public abstract ArrayList<Arrow> getArrows();
-
         public abstract boolean isCompleted();
 
         // Method to fire an arrow from the archer's position
