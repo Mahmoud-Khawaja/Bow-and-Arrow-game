@@ -29,4 +29,4 @@ We made several decisions to create a fun and engaging gaming experience:
 
 ### Gameplay Screenshot
 
-<p align="center"><img src="src/com/game/diagram/game.png" alt="Gameplay"></p>
+<p align="center"><img src="src/com/game/diagram/game.PNG" alt="Gameplay"></p>
