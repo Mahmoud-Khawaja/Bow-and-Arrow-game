@@ -7,14 +7,26 @@ import com.game.objects.Balloon;
 import com.game.objects.RedBalloon;
 import java.util.ArrayList;
 
+/**
+ * Represents the first level of the game.
+ */
 public class LevelOne extends Level {
 
+    /**
+     * Constructs a new LevelOne with the specified parameters.
+     * @param parent The PApplet object for drawing.
+     * @param numArrows The number of arrows available in this level.
+     * @param archer The player character represented by an Archer.
+     */
     public LevelOne(PApplet parent, int numArrows, Archer archer) {
         super(parent, numArrows, archer);
         createBalloons();
         createArrows();
     }
 
+    /**
+     * Creates the balloons for this level.
+     */
     private void createBalloons() {
         float spacing = 2; // Spacing between balloons
 
@@ -24,12 +36,18 @@ public class LevelOne extends Level {
         }
     }
 
+    /**
+     * Creates the arrows for this level.
+     */
     private void createArrows() {
         for (int i = 0; i < numArrows; i++) {
             arrows.add(new Arrow(archer.getX(), archer.getY(), parent));
         }
     }
 
+    /**
+     * Updates the balloons and arrows in this level.
+     */
     @Override
     public void update() {
         for (Balloon balloon : balloons) {
@@ -40,6 +58,9 @@ public class LevelOne extends Level {
         }
     }
 
+    /**
+     * Displays the balloons and arrows in this level.
+     */
     @Override
     public void display() {
         for (Balloon balloon : balloons) {
@@ -50,16 +71,28 @@ public class LevelOne extends Level {
         }
     }
 
+    /**
+     * Retrieves the list of balloons in this level.
+     * @return The list of balloons.
+     */
     @Override
     public ArrayList<Balloon> getBalloons() {
         return balloons;
     }
 
+    /**
+     * Retrieves the list of arrows in this level.
+     * @return The list of arrows.
+     */
     @Override
     public ArrayList<Arrow> getArrows() {
         return arrows;
     }
 
+    /**
+     * Checks if this level is completed.
+     * @return True if all balloons are popped, false otherwise.
+     */
     @Override
     public boolean isCompleted() {
         return balloons.isEmpty();

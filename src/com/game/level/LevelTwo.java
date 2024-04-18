@@ -8,20 +8,35 @@ import com.game.objects.RedBalloon;
 import com.game.objects.YellowBalloon;
 import java.util.ArrayList;
 
+/**
+ * Represents the second level of the game.
+ */
 public class LevelTwo extends Level {
     private final float balloonSpacing = 30; // Spacing between balloons
 
+    /**
+     * Constructs a new LevelTwo with the specified parameters.
+     * @param parent The PApplet object for drawing.
+     * @param numArrows The number of arrows available in this level.
+     * @param archer The player character represented by an Archer.
+     */
     public LevelTwo(PApplet parent, int numArrows, Archer archer) {
         super(parent, numArrows, archer);
         createBalloons();
         createArrows();
     }
 
+    /**
+     * Creates the balloons for this level.
+     */
     private void createBalloons() {
         createRedBalloons();
         createYellowBalloons();
     }
 
+    /**
+     * Creates the red balloons for this level.
+     */
     private void createRedBalloons() {
         int numRedBalloons = 15;
         for (int i = 0; i < numRedBalloons; i++) {
@@ -30,6 +45,9 @@ public class LevelTwo extends Level {
         }
     }
 
+    /**
+     * Creates the yellow balloons for this level.
+     */
     private void createYellowBalloons() {
         int numYellowBalloons = 3;
         for (int i = 0; i < numYellowBalloons; i++) {
@@ -40,12 +58,18 @@ public class LevelTwo extends Level {
         }
     }
 
+    /**
+     * Creates the arrows for this level.
+     */
     private void createArrows() {
         for (int i = 0; i < numArrows; i++) {
             arrows.add(new Arrow(archer.getX(), archer.getY(), parent));
         }
     }
 
+    /**
+     * Updates the balloons and arrows in this level.
+     */
     @Override
     public void update() {
         for (Balloon balloon : balloons) {
@@ -56,6 +80,9 @@ public class LevelTwo extends Level {
         }
     }
 
+    /**
+     * Displays the balloons and arrows in this level.
+     */
     @Override
     public void display() {
         for (Balloon balloon : balloons) {
@@ -66,16 +93,28 @@ public class LevelTwo extends Level {
         }
     }
 
+    /**
+     * Checks if this level is completed.
+     * @return True if all balloons are popped, false otherwise.
+     */
     @Override
     public boolean isCompleted() {
         return balloons.isEmpty();
     }
 
+    /**
+     * Retrieves the list of balloons in this level.
+     * @return The list of balloons.
+     */
     @Override
     public ArrayList<Balloon> getBalloons() {
         return balloons;
     }
 
+    /**
+     * Retrieves the list of arrows in this level.
+     * @return The list of arrows.
+     */
     @Override
     public ArrayList<Arrow> getArrows() {
         return arrows;
