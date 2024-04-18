@@ -1,4 +1,8 @@
-### Class Hierarchy
+# Archery Game
+
+Welcome to our archery game! This game challenges you to test your archery skills by shooting balloons with your bow and arrow.
+
+## Class Hierarchy
 We organized our game into different classes, each responsible for a specific aspect of the gameplay:
 
 - **Main**: This is where the game begins. It sets up the environment and launches the game manager.
@@ -14,7 +18,7 @@ We organized our game into different classes, each responsible for a specific as
 ### Class Diagram
 ![Class Diagram](src/com/game/diagram/UML.svg)
 
-### Design Choices
+## Design Choices
 We made several decisions to create a fun and engaging gaming experience:
 
 - **Keep It Object-Oriented**: By organizing our code into classes, we can easily manage different game components and make updates without affecting other parts of the game.
@@ -22,3 +26,7 @@ We made several decisions to create a fun and engaging gaming experience:
 - **Abstract Thinking**: We used abstract classes like Level and Balloon to provide a blueprint for different aspects of the game. This allows for flexibility in designing levels and adding new balloon types.
   
 - **Putting It All Together**: The Manager class acts as the glue that holds everything together. It manages the flow of the game, ensuring smooth transitions between levels and keeping track of your progress.
+
+### Gameplay Screenshot
+
+<p align="center"><img src="src/com/game/diagram/game.png" alt="Gameplay"></p>

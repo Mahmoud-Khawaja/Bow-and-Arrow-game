@@ -1,26 +1,26 @@
-// Arrow.java
 package com.game.objects;
 
 import processing.core.PApplet;
+import processing.core.PImage;
 
 import java.util.ArrayList;
 
 public class Arrow {
     float x, y;
-    float speed = 3;
-    PApplet parent;
+    final float speed = 3;
+    final PApplet parent;
+    final PImage arrowImage; 
 
     public Arrow(float x, float y, PApplet parent) {
         this.x = x;
         this.y = y;
         this.parent = parent;
+        this.arrowImage = parent.loadImage("src/com/game/spirits/arrow.png"); 
     }
 
     public void update(ArrayList<Balloon> balloons) {
-        // Update arrow position if fired
         x += speed;
 
-        // Check for collision with balloons
         for (int i = balloons.size() - 1; i >= 0; i--) {
             Balloon balloon = balloons.get(i);
             if (hits(balloon)) {
@@ -30,8 +30,7 @@ public class Arrow {
     }
 
     public void display() {
-        parent.stroke(2);
-        parent.line(x, y, x + 30, y);
+        parent.image(arrowImage, x, y, 50, 5);
     }
 
     public boolean isOffscreen() {
@@ -41,7 +40,7 @@ public class Arrow {
     public boolean hits(Balloon balloon) {
         // Check if arrow hits the balloon
         float distance = PApplet.dist(x, y, balloon.x, balloon.y);
-        return distance < 15; // Adjust this value as needed for better hit detection
+        return distance < 15; 
     }
 
     public float getY(){
@@ -50,6 +49,4 @@ public class Arrow {
     public float getX(){
         return x;
     }
-
 }
-

@@ -1,6 +1,5 @@
 package com.game.objects;
 
-import com.game.objects.Arrow;
 import processing.core.PApplet;
 
 public abstract class Balloon {

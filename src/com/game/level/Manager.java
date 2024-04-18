@@ -19,7 +19,7 @@ public class Manager {
     // Main configurations
     public Manager(PApplet parent) {
         this.parent = parent;
-        this.archer = new Archer(25, parent.height / 2f, parent);
+        this.archer = new Archer(50, parent.height / 2f, parent);
         this.arrowsNumber = 20;
         this.arrowsFired = 0;
         this.score = 0;
@@ -43,28 +43,31 @@ public class Manager {
     }
 
     public void display() {
+        parent.background(0, 255, 0); // Set background color to green
         levels.get(currentLevelIndex).display();
         archer.display(parent);
         displayScore();
+        if(!parent.isLooping())gameOver();
     }
 
     private void checkLevelCompletion() {
         Level currentLevel = levels.get(currentLevelIndex);
         int remainingArrows = currentLevel.getArrows().size() - arrowsFired;
-
+    
         if (remainingArrows <= 0) {
             gameOver();
             return;
         }
-
+    
         if (currentLevel.isCompleted()) {
             int balloonsHit = arrowsNumber - remainingArrows;
             score += (remainingArrows + 1) * balloonsHit;
-            arrowsFired = 0; // Reset arrowsFired count
-            currentLevelIndex++;
-
-            if (currentLevelIndex >= levels.size()) {
+            arrowsFired = 0; 
+    
+            if (currentLevelIndex + 1 >= levels.size()) {
                 gameOver();
+            } else {
+                currentLevelIndex++;
             }
         }
     }
@@ -82,7 +85,7 @@ public class Manager {
         if (!currentLevel.isCompleted() && !currentLevel.getArrows().isEmpty()) {
             if (parent.mouseButton == PApplet.LEFT) {
                 fireArrow();
-                currentLevel.getArrows().removeFirst(); // Remove the first arrow
+                currentLevel.getArrows().remove(0); // Remove the first arrow
             }
         }
     }
